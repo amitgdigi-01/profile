@@ -4,21 +4,65 @@
 
 const CONFIG = {
     // Cloudflare Web Analytics Token
-    // Get from: Cloudflare Dashboard → Analytics → Web Analytics → Enable → Copy token
     cloudflareToken: 'b1ff6127cd074a228add9fddeaeea4c2',
 
     // Google Apps Script Web App URL
-    // Get from: Google Apps Script → Deploy → Web App → Copy URL
     appsScriptUrl: 'https://script.google.com/macros/s/AKfycbx-Wo7lBqioT5gtGotkdTSTYZv7SWvEC_V3V3e3V7jxBxvSB1lBgfoxauJjZ_Bbirnj/exec',
 
-    // Your biodata
-    biodata: {
-        name: 'Amit Gupta', 
-        age: '25',
+    // ============================================
+    // 1. PERSONAL DETAILS
+    // ============================================
+    personal: {
+        name: 'Amit Gupta',
+        caste: 'General',
+        dateOfBirth: '01-04-2001',
+        // age: '26',
+        bloodGroup: 'B-',
+        height: '5\'7"',
+        weight: '60 kg',
+        education: 'B.Engineering in Computer Science',
         occupation: 'Software Developer',
-        bio: 'A brief description about yourself goes here. Keep it short and meaningful.',
-        email: 'amitgdigi@gmail.com',
+        company: 'Atharva System',
+        annualIncome: '4 LPA',
         phone: '+91-9824953579',
+        email: 'amitgdigi@gmail.com',
+        photo: 'amit1.jpeg'
+    },
+
+    // ============================================
+    // 2. FAMILY BACKGROUND
+    // ============================================
+    family: {
+        fatherName: 'Radheshyam Gupta',
+        fatherOccupation: 'Self Employeed',
+        motherName: 'Bindu Gupta',
+        motherOccupation: 'Housewife',
+        siblings: {
+            brothers: 0,
+            sisters: 4
+        },
+        familyType: 'Joint',  // Joint / Nuclear
+        // familyStatus: 'Lower Middle Class'  // Lower Middle / Middle / Upper Middle / Rich
+    },
+
+    // ============================================
+    // 3. OTHER DETAILS
+    // ============================================
+    other: {
+        address: {
+            line1: 'B 2',
+            line2: 'Maruti Park',
+            line3: 'Top 3 circle',
+            city: 'Bhavnagar',
+            state: 'Gujarat',
+            country: 'India',
+            pincode: '364002',
+            nativePlace: 'Gorakhpur, Uttar Pradesh'
+        },
+        languagesKnown: 'Hindi, English, Gujarati',
+        // religion: 'Hindu',
+        // hobbies: 'Reading, Coding, Traveling',
+        // partnerExpectations: 'Simple, educated, family-oriented'
     },
 
     // Social links (set to null to hide)
