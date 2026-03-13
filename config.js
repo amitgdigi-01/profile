@@ -17,7 +17,7 @@ const CONFIG = {
         caste: 'General',
         dateOfBirth: '01-04-2001',
         // age: '26',
-        bloodGroup: 'B-',
+        bloodGroup: 'B -',
         height: '5\'7"',
         weight: '60 kg',
         education: 'B.Engineering in Computer Science',
