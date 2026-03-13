@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_CLOUDFLARE_TOKEN_HERE"}'></script>
+</head>
+<body>
+    <!-- Biodata Section -->
+    <header class="biodata-section">
+        <div class="profile-photo">
+            <img src="photo.jpg" alt="Passport Photo" id="profile-img">
+        </div>
+        <div class="biodata-info">
+            <h1>Your Name</h1>
+            <p class="age">Age: 25</p>
+            <p class="occupation">Software Developer</p>
+            <p class="bio">A brief description about yourself goes here. Keep it short and meaningful.</p>
+            <div class="contact-info">
+                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                <a href="tel:+1234567890">+1 234 567 890</a>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+        <div class="image-container">
+            <img src="img1.jpg" alt="Full Screen Image 1" class="gallery-img" draggable="false">
+            <span class="watermark">Your Name</span>
+        </div>
+        <div class="image-container">
+            <img src="img2.jpg" alt="Full Screen Image 2" class="gallery-img" draggable="false">
+            <span class="watermark">Your Name</span>
+        </div>
+        <div class="image-container">
+            <img src="img3.jpg" alt="Full Screen Image 3" class="gallery-img" draggable="false">
+            <span class="watermark">Your Name</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Your Name</p>
+    </footer>
+
+    <!-- Visitor Tracking Script -->
+    <script>
+        // ========== CONFIGURATION ==========
+        const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+        
+        // ========== VISITOR TRACKING ==========
+        let startTime = Date.now();
+        let pageVisible = true;
+
+        // Track page visibility
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                pageVisible = false;
+            }
+        });
+
+        // Get browser info
+        function getBrowserInfo() {
+            const ua = navigator.userAgent;
+            let browser = 'Unknown';
+            
+            if (ua.indexOf('Firefox') > -1) browser = 'Firefox';
+            else if (ua.indexOf('Chrome') > -1) browser = 'Chrome';
+            else if (ua.indexOf('Safari') > -1) browser = 'Safari';
+            else if (ua.indexOf('Edge') > -1) browser = 'Edge';
+            
+            return browser;
+        }
+
+        // Get device type
+        function getDeviceType() {
+            const ua = navigator.userAgent;
+            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+                return 'Tablet';
+            }
+            if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+                return 'Mobile';
+            }
+            return 'Desktop';
+        }
+
+        // Get visitor IP and location via ip-api.com (free, 1000 requests/day)
+        async function getVisitorInfo() {
+            try {
+                const response = await fetch('http://ip-api.com/json/?fields=status,message,country,city,query');
+                const data = await response.json();
+                return {
+                    ip: data.query || 'Unknown',
+                    city: data.city || 'Unknown',
+                    country: data.country || 'Unknown'
+                };
+            } catch (e) {
+                console.log('IP lookup failed:', e);
+                return { ip: 'Unknown', city: 'Unknown', country: 'Unknown' };
+            }
+        }
+
+        // Send data to Google Sheets
+        async function logVisitor(visitorData) {
+            try {
+                const response = await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    },
+                    body: JSON.stringify(visitorData)
+                });
+                console.log('Visitor logged successfully');
+            } catch (e) {
+                console.log('Failed to log visitor:', e);
+            }
+        }
+
+        // Track visitor on page load
+        (async function() {
+            const browser = getBrowserInfo();
+            const device = getDeviceType();
+            const location = await getVisitorInfo();
+            
+            const visitorData = {
+                ip: location.ip,
+                city: location.city,
+                country: location.country,
+                device: device,
+                browser: browser,
+                timeSpent: 0,
+                url: window.location.href
+            };
+            
+            // Log initial visit
+            logVisitor(visitorData);
+            
+            // Log time spent when leaving
+            window.addEventListener('beforeunload', () => {
+                const timeSpent = Math.round((Date.now() - startTime) / 1000);
+                visitorData.timeSpent = timeSpent;
+                logVisitor(visitorData);
+            });
+        })();
+    </script>
+
+    <!-- Content Protection Script -->
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        // Disable image drag
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // Disable image selection
+        document.addEventListener('selectstart', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
