@@ -20,7 +20,7 @@ const CONFIG = {
         bloodGroup: 'B -',
         height: '5\'7"',
         weight: '60 kg',
-        education: 'B.Engineering in Computer Science',
+        education: 'B.E in Computer Science',
         occupation: 'Software Developer',
         company: 'Atharva System',
         annualIncome: '4 LPA',
@@ -41,7 +41,7 @@ const CONFIG = {
             // brothers: 0,
             sisters: 4
         },
-        familyType: 'Joint',  // Joint / Nuclear
+        // familyType: 'Nuclear',  // Joint / Nuclear
         // familyStatus: 'Lower Middle Class'  // Lower Middle / Middle / Upper Middle / Rich
     },
 
@@ -82,7 +82,7 @@ const CONFIG = {
                 pincode: '380015'
             }
         ],
-        languagesKnown: 'Bhaojpuri, Hindi, English, Gujarati',
+        languagesKnown: 'Hindi, English, Gujarati, Bhojpuri',
         // religion: 'Hindu',
         // hobbies: 'Reading, Coding, Traveling',
         // partnerExpectations: 'Simple, educated, family-oriented'
@@ -104,11 +104,16 @@ const CONFIG = {
 
     // Gallery Images - Add individual watermark for each image
     gallery: [
-        { src: 'amit5.jpeg', watermark: 'Amit Gupta | Apr-2024' },
-        { src: 'amit2.jpeg', watermark: 'Amit Gupta | Jan-2024' },
-        { src: 'amit3.jpeg', watermark: 'Amit Gupta | Feb-2024' },
-        { src: 'amit4.jpeg', watermark: 'Amit Gupta | Mar-2024' },
-        { src: 'amit6.jpeg', watermark: 'Amit Gupta | Apr-2024' },
-        { src: 'amit7.jpeg', watermark: 'Amit Gupta | Apr-2024' }
+        { src: 'amit2.jpg', watermark: 'Amit Gupta | Sept-2025' },
+        { src: 'amit3.jpg', watermark: 'Amit Gupta | Feb-2023' },
+        { src: 'amit4.jpg', watermark: 'Amit Gupta | Jan-2026' },
+        // { src: 'amit6.jpeg', watermark: 'Amit Gupta | Apr-2024' },
+        // { src: 'amit7.jpeg', watermark: 'Amit Gupta | Apr-2024' }
+        // { src: 'amit5.jpeg', watermark: 'Amit Gupta | Apr-2024' },
+        // { src: 'amit2.jpeg', watermark: 'Amit Gupta | Jan-2024' },
+        // { src: 'amit3.jpeg', watermark: 'Amit Gupta | Feb-2024' },
+        // { src: 'amit4.jpeg', watermark: 'Amit Gupta | Mar-2024' },
+        // { src: 'amit6.jpeg', watermark: 'Amit Gupta | Apr-2024' },
+        // { src: 'amit7.jpeg', watermark: 'Amit Gupta | Apr-2024' }
     ]
 };
