@@ -75,6 +75,32 @@ body {
     font-weight: 600;
 }
 
+.subsection-title:first-child {
+    margin-top: 0;
+}
+
+/* Address card styling */
+.address-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 1px solid #667eea;
+    border-top: 1px solid #667eea;
+    border-right: 3px solid #667eea;
+    border-bottom: 2px solid #667eea;
+}
+
+.address-card .subsection-title {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #667eea;
+}
+
+.address-card .info-grid {
+    margin-top: 5px;
+}
+
 /* Info Grid */
 .info-grid {
     display: grid;

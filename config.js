@@ -14,7 +14,7 @@ const CONFIG = {
     // ============================================
     personal: {
         name: 'Amit Gupta',
-        caste: 'General',
+        caste: 'Janakpuri Teli',
         dateOfBirth: '01-04-2001',
         // age: '26',
         bloodGroup: 'B -',
@@ -24,7 +24,7 @@ const CONFIG = {
         occupation: 'Software Developer',
         company: 'Atharva System',
         annualIncome: '4 LPA',
-        phone: '+91-9824953579',
+        phone: '9824953579',
         email: 'amitgdigi@gmail.com',
         photo: 'amit1.jpeg'
     },
@@ -38,7 +38,7 @@ const CONFIG = {
         motherName: 'Bindu Gupta',
         motherOccupation: 'Housewife',
         siblings: {
-            brothers: 0,
+            // brothers: 0,
             sisters: 4
         },
         familyType: 'Joint',  // Joint / Nuclear
@@ -49,17 +49,40 @@ const CONFIG = {
     // 3. OTHER DETAILS
     // ============================================
     other: {
-        address: {
-            line1: 'B 2',
-            line2: 'Maruti Park',
-            line3: 'Top 3 circle',
-            city: 'Bhavnagar',
-            state: 'Gujarat',
-            country: 'India',
-            pincode: '364002',
-            nativePlace: 'Gorakhpur, Uttar Pradesh'
-        },
-        languagesKnown: 'Hindi, English, Gujarati',
+        // Add up to 3 addresses
+        addresses: [
+            {
+                label: 'Native Place',
+                line1: 'Tulsi Pakad, Post Baksuri',
+                line2: 'Thana Jhangaha',
+                line3: 'Block Brahmpur',
+                city: 'Gorakhpur',
+                // state: 'Uttar Pradesh',
+                // country: 'India',
+                pincode: '273405'
+            },
+            {
+                label: 'Current Address',
+                line1: 'A 2, Maruti Park',
+                line2: 'Top 3 circle',
+                line3: '',
+                city: 'Bhavnagar',
+                // state: 'Gujarat',
+                // country: 'India',
+                pincode: '364002'
+            },
+            {
+                label: 'Temporary Address',
+                line1: '97, Block 7',
+                line2: 'Vidyanagar Flat',
+                line3: 'IIM Road, behind ITC Narmada Hotel',
+                city: 'Ahmedabad',
+                // state: 'Gujarat',
+                // country: 'India',
+                pincode: '380015'
+            }
+        ],
+        languagesKnown: 'Bhaojpuri, Hindi, English, Gujarati',
         // religion: 'Hindu',
         // hobbies: 'Reading, Coding, Traveling',
         // partnerExpectations: 'Simple, educated, family-oriented'
@@ -71,6 +94,21 @@ const CONFIG = {
         twitter: 'https://x.com/yourhandle'
     },
 
-    // Watermark text on images
-    watermark: 'Amit Gupta'
+    // Image Protection Settings
+    imageProtection: {
+        disableRightClick: true,    // Prevent right-click context menu
+        disableDrag: true,          // Prevent dragging images
+        disableTouchHold: false,     // Prevent long-press on mobile
+        disableSelection: true      // Prevent selecting images
+    },
+
+    // Gallery Images - Add individual watermark for each image
+    gallery: [
+        { src: 'amit5.jpeg', watermark: 'Amit Gupta | Apr-2024' },
+        { src: 'amit2.jpeg', watermark: 'Amit Gupta | Jan-2024' },
+        { src: 'amit3.jpeg', watermark: 'Amit Gupta | Feb-2024' },
+        { src: 'amit4.jpeg', watermark: 'Amit Gupta | Mar-2024' },
+        { src: 'amit6.jpeg', watermark: 'Amit Gupta | Apr-2024' },
+        { src: 'amit7.jpeg', watermark: 'Amit Gupta | Apr-2024' }
+    ]
 };

@@ -36,10 +36,6 @@
                     <span class="info-label">Date of Birth</span>
                     <span class="info-value" id="pd-dob">-</span>
                 </div>
-                <!-- <div class="info-item">
-                    <span class="info-label">Age</span>
-                    <span class="info-value" id="pd-age">-</span>
-                </div> -->
                 <div class="info-item">
                     <span class="info-label">Blood Group</span>
                     <span class="info-value" id="pd-blood">-</span>
@@ -52,10 +48,14 @@
                     <span class="info-label">Weight</span>
                     <span class="info-value" id="pd-weight">-</span>
                 </div>
-                <!-- <div class="info-item">
-                    <span class="info-label">Marital Status</span>
-                    <span class="info-value" id="pd-marital">-</span>
-                </div> -->
+                <div class="info-item">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value" id="pd-phone">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span class="info-value" id="pd-email">-</span>
+                </div>
                 <div class="info-item full-width">
                     <span class="info-label">Education</span>
                     <span class="info-value" id="pd-education">-</span>
@@ -73,12 +73,8 @@
                     <span class="info-value" id="pd-income">-</span>
                 </div>
                 <div class="info-item">
-                    <span class="info-label">Phone</span>
-                    <span class="info-value" id="pd-phone">-</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Email</span>
-                    <span class="info-value" id="pd-email">-</span>
+                    <span class="info-label">Languages Known</span>
+                    <span class="info-value" id="od-languages">-</span>
                 </div>
             </div>
         </section>
@@ -111,10 +107,6 @@
                     <span class="info-label">Family Type</span>
                     <span class="info-value" id="fb-type">-</span>
                 </div>
-                <!-- <div class="info-item">
-                    <span class="info-label">Family Status</span>
-                    <span class="info-value" id="fb-status">-</span>
-                </div> -->
             </div>
         </section>
 
@@ -122,40 +114,14 @@
         <section class="biodata-section">
             <h2 class="section-title">Other Details</h2>
             
-            <h3 class="subsection-title">Address</h3>
-            <div class="info-grid">
-                <div class="info-item full-width">
-                    <span class="info-label">Address</span>
-                    <span class="info-value" id="od-address">-</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">City</span>
-                    <span class="info-value" id="od-city">-</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">State</span>
-                    <span class="info-value" id="od-state">-</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Country</span>
-                    <span class="info-value" id="od-country">-</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Pincode</span>
-                    <span class="info-value" id="od-pincode">-</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Native Place</span>
-                    <span class="info-value" id="od-native">-</span>
-                </div>
-            </div>
+            <!-- Dynamic Addresses -->
+            <div id="addresses-container"></div>
 
-            <h3 class="subsection-title">Personal Info</h3>
             <div class="info-grid">
-                <div class="info-item">
+                <!-- <div class="info-item">
                     <span class="info-label">Languages Known</span>
                     <span class="info-value" id="od-languages">-</span>
-                </div>
+                </div> -->
                 <!-- <div class="info-item">
                     <span class="info-label">Religion</span>
                     <span class="info-value" id="od-religion">-</span>
@@ -170,6 +136,7 @@
                 </div> -->
             </div>
         </section>
+        </section>
 
         <!-- Contact Buttons -->
         <section class="contact-section">
@@ -177,24 +144,8 @@
             <a href="#" class="contact-btn" id="btn-phone">Call</a>
         </section>
 
-        <!-- Image Gallery -->
-        <section class="gallery">
-            <div class="image-container">
-                <img src="amit2.jpg" alt="Image 1" class="gallery-img" draggable="false">
-                <span class="watermark">Amit Gupta</span>
-            </div>
-            <div class="image-container">
-                <img src="amit3.jpg" alt="Image 2" class="gallery-img" draggable="false">
-                <span class="watermark">Amit Gupta</span>
-            </div>
-            <div class="image-container">
-                <img src="amit4.jpg" alt="Image 3" class="gallery-img" draggable="false">
-                <span class="watermark">Amit Gupta</span>
-            </div>
-            <!-- <div class="image-container">
-                <img src="amit5.jpg" alt="Image 4" class="gallery-img" draggable="false">
-                <span class="watermark">Amit Gupta</span>
-            </div> -->
+        <!-- Image Gallery (Dynamic) -->
+        <section class="gallery" id="gallery-container">
         </section>
 
         <footer>
@@ -223,12 +174,12 @@
         document.getElementById('pd-blood').textContent = CONFIG.personal.bloodGroup;
         document.getElementById('pd-height').textContent = CONFIG.personal.height;
         document.getElementById('pd-weight').textContent = CONFIG.personal.weight;
+        document.getElementById('pd-phone').textContent = CONFIG.personal.phone;
+        document.getElementById('pd-email').textContent = CONFIG.personal.email;
         document.getElementById('pd-education').textContent = CONFIG.personal.education;
         document.getElementById('pd-occupation').textContent = CONFIG.personal.occupation;
         document.getElementById('pd-company').textContent = CONFIG.personal.company;
         document.getElementById('pd-income').textContent = CONFIG.personal.annualIncome;
-        document.getElementById('pd-phone').textContent = CONFIG.personal.phone;
-        document.getElementById('pd-email').textContent = CONFIG.personal.email;
 
         // Family Background
         document.getElementById('fb-father').textContent = CONFIG.family.fatherName;
@@ -237,30 +188,57 @@
         document.getElementById('fb-mother-occ').textContent = CONFIG.family.motherOccupation;
         document.getElementById('fb-siblings').textContent = CONFIG.family.siblings.sisters + ' Sisters';
         document.getElementById('fb-type').textContent = CONFIG.family.familyType;
-        // document.getElementById('fb-status').textContent = CONFIG.family.familyStatus;
 
-        // Other Details - Address
-        const address = [CONFIG.other.address.line1, CONFIG.other.address.line2, CONFIG.other.address.line3].filter(Boolean).join(', ');
-        document.getElementById('od-address').textContent = address || '-';
-        document.getElementById('od-city').textContent = CONFIG.other.address.city;
-        document.getElementById('od-state').textContent = CONFIG.other.address.state;
-        document.getElementById('od-country').textContent = CONFIG.other.address.country;
-        document.getElementById('od-pincode').textContent = CONFIG.other.address.pincode;
-        document.getElementById('od-native').textContent = CONFIG.other.address.nativePlace;
+        // Other Details - Addresses (Dynamic)
+        const addressesContainer = document.getElementById('addresses-container');
+        const addresses = CONFIG.other.addresses || [];
+        
+        addresses.forEach((addr, index) => {
+            if (addr.line1 || addr.city) {
+                const addrHtml = `
+                    <div class="address-card">
+                        <h3 class="subsection-title">${addr.label || 'Address ' + (index + 1)}</h3>
+                        <div class="info-grid">
+                            <div class="info-item full-width">
+                                <span class="info-value">${[addr.line1, addr.line2, addr.line3].filter(Boolean).join(', ')}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">City</span>
+                                <span class="info-value">${addr.city || '-'}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Pincode</span>
+                                <span class="info-value">${addr.pincode || '-'}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                addressesContainer.innerHTML += addrHtml;
+            }
+        });
 
-        // Other Details - Personal
-        document.getElementById('od-languages').textContent = CONFIG.other.languagesKnown;
-        // document.getElementById('od-religion').textContent = CONFIG.other.religion;
-        // document.getElementById('od-hobbies').textContent = CONFIG.other.hobbies;
-        // document.getElementById('od-expectations').textContent = CONFIG.other.partnerExpectations;
+        // Other Details - Personal Info
+        document.getElementById('od-languages').textContent = CONFIG.other.languagesKnown || '-';
+        // document.getElementById('od-religion').textContent = CONFIG.other.religion || '-';
+        // document.getElementById('od-hobbies').textContent = CONFIG.other.hobbies || '-';
+        // document.getElementById('od-expectations').textContent = CONFIG.other.partnerExpectations || '-';
 
         // Contact Buttons
         document.getElementById('btn-email').href = 'mailto:' + CONFIG.personal.email;
         document.getElementById('btn-phone').href = 'tel:' + CONFIG.personal.phone.replace(/\s/g, '');
 
-        // Watermarks
-        document.querySelectorAll('.watermark').forEach(el => {
-            el.textContent = CONFIG.watermark;
+        // Dynamic Gallery with individual watermarks
+        const galleryContainer = document.getElementById('gallery-container');
+        const galleryImages = CONFIG.gallery || [];
+        
+        galleryImages.forEach((img, index) => {
+            const galleryHtml = `
+                <div class="image-container">
+                    <img src="${img.src}" alt="Image ${index + 1}" class="gallery-img" draggable="false">
+                    <span class="watermark">${img.watermark}</span>
+                </div>
+            `;
+            galleryContainer.innerHTML += galleryHtml;
         });
 
         // Footer
@@ -346,10 +324,23 @@
 
     <!-- Content Protection -->
     <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
-        document.addEventListener('selectstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
-        document.addEventListener('touchstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); }, { passive: false });
+        const protection = CONFIG.imageProtection || {};
+        
+        if (protection.disableRightClick) {
+            document.addEventListener('contextmenu', e => e.preventDefault());
+        }
+        
+        if (protection.disableDrag) {
+            document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+        }
+        
+        if (protection.disableSelection) {
+            document.addEventListener('selectstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+        }
+        
+        if (protection.disableTouchHold) {
+            document.addEventListener('touchstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); }, { passive: false });
+        }
     </script>
 </body>
 </html>
