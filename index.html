@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">My Profile</title>
+    
+    <!-- Social Media Preview (Open Graph & Twitter) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Amit Gupta - Biodata">
+    <meta property="og:description" content="Personal Biodata - View my profile">
+    <meta property="og:image" content="https://amitgupta.github.io/profile/amit_p.jpeg">
+    <meta property="og:url" content="https://amitgupta.github.io/profile/">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amit Gupta - Biodata">
+    <meta name="twitter:description" content="Personal Biodata - View my profile">
+    <meta name="twitter:image" content="https://amitgupta.github.io/profile/amit_p.jpeg">
+    
     <link rel="stylesheet" href="style.css">
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": ""}'></script>
 </head>
@@ -14,7 +27,7 @@
         <!-- Header with Photo -->
         <header class="biodata-header">
             <div class="profile-photo">
-                <img src="amit1.jpg" alt="Photo" id="profile-img">
+                <img src="amit_p1.jpeg" alt="Photo" id="profile-img">
             </div>
             <h1 id="profile-name">Your Name</h1>
             <p class="header-subtitle" id="profile-occupation">Occupation</p>
@@ -243,6 +256,22 @@
 
         // Footer
         document.querySelector('footer p').textContent = '© 2026 ' + CONFIG.personal.name;
+
+        // Social Media Preview (Open Graph & Twitter)
+        if (CONFIG.socialPreview) {
+            document.title = CONFIG.socialPreview.title || CONFIG.personal.name + ' - Biodata';
+            
+            // Open Graph
+            document.querySelector('meta[property="og:title"]').content = CONFIG.socialPreview.title || CONFIG.personal.name;
+            document.querySelector('meta[property="og:description"]').content = CONFIG.socialPreview.description || 'Personal Biodata';
+            document.querySelector('meta[property="og:image"]').content = CONFIG.socialPreview.image || CONFIG.personal.photo;
+            document.querySelector('meta[property="og:url"]').content = CONFIG.socialPreview.url || window.location.href;
+            
+            // Twitter Card
+            document.querySelector('meta[name="twitter:title"]').content = CONFIG.socialPreview.title || CONFIG.personal.name;
+            document.querySelector('meta[name="twitter:description"]').content = CONFIG.socialPreview.description || 'Personal Biodata';
+            document.querySelector('meta[name="twitter:image"]').content = CONFIG.socialPreview.image || CONFIG.personal.photo;
+        }
 
         // Cloudflare Analytics
         if (CONFIG.cloudflareToken && !CONFIG.cloudflareToken.includes('YOUR_')) {

@@ -15,7 +15,7 @@ const CONFIG = {
     personal: {
         name: 'Amit Gupta',
         caste: 'Janakpuri Teli',
-        dateOfBirth: '01-04-2001',
+        dateOfBirth: '01-04-1999',
         // age: '26',
         bloodGroup: 'B -',
         height: '5\'7"',
@@ -23,10 +23,10 @@ const CONFIG = {
         education: 'B.E in Computer Science',
         occupation: 'Software Developer',
         company: 'Atharva System',
-        annualIncome: '4 LPA',
+        annualIncome: '4.5 LPA',
         phone: '9824953579',
         email: 'amitgdigi@gmail.com',
-        photo: 'amit1.jpeg'
+        photo: 'amit_p1.jpeg'
     },
 
     // ============================================
@@ -105,15 +105,25 @@ const CONFIG = {
     // Gallery Images - Add individual watermark for each image
     gallery: [
         { src: 'amit2.jpg', watermark: 'Amit Gupta | Sept-2025' },
-        { src: 'amit3.jpg', watermark: 'Amit Gupta | Feb-2023' },
+        // { src: 'amit3.jpg', watermark: 'Amit Gupta | Feb-2023' },
         { src: 'amit4.jpg', watermark: 'Amit Gupta | Jan-2026' },
-        // { src: 'amit6.jpeg', watermark: 'Amit Gupta | Apr-2024' },
-        // { src: 'amit7.jpeg', watermark: 'Amit Gupta | Apr-2024' }
-        // { src: 'amit5.jpeg', watermark: 'Amit Gupta | Apr-2024' },
+        { src: 'amit5.png', watermark: 'Amit Gupta | Sept-2025' },
+        { src: 'amit7.jpg', watermark: 'Amit Gupta | Sept-2025' },
+        { src: 'amit6.jpg', watermark: 'Amit Gupta | Sept-2025' },
+        // { src: 'amit8.jpeg', watermark: 'Amit Gupta | Apr-2024' },
         // { src: 'amit2.jpeg', watermark: 'Amit Gupta | Jan-2024' },
         // { src: 'amit3.jpeg', watermark: 'Amit Gupta | Feb-2024' },
         // { src: 'amit4.jpeg', watermark: 'Amit Gupta | Mar-2024' },
         // { src: 'amit6.jpeg', watermark: 'Amit Gupta | Apr-2024' },
         // { src: 'amit7.jpeg', watermark: 'Amit Gupta | Apr-2024' }
-    ]
+    ],
+
+    // Social Media Preview Settings (for WhatsApp, Facebook, Twitter)
+    // IMPORTANT: Use FULL URL (with https://) for image and url to work on WhatsApp/social media
+    socialPreview: {
+        title: 'Amit Gupta - Biodata',
+        description: 'Personal Biodata - View my profile',
+        image: 'https://amitgupta.github.io/profile/amit_p1.jpeg',  // Use FULL URL for WhatsApp preview
+        url: 'https://amitgupta.github.io/profile/'
+    }
 };
